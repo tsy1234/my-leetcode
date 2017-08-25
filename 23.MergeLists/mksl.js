@@ -9,12 +9,12 @@
  * @param {ListNode[]} lists
  * @return {ListNode}
  */
-var mergeKLists = function(lists) {
+var mergeKLists = function (lists) {
     if (lists.length === 0) return [];
     while (lists.length > 1) {
-        var first = lists.push();
-        var second = lists.push();
-        lists.pop(mergeTwoLists(first, second));
+        var first = lists.pop();
+        var second = lists.pop();
+        lists.push(mergeTwoLists(first, second));
     }
     return lists;
 };
@@ -46,3 +46,4 @@ var mergeTwoLists = function (l1, l2) {
 
     return top.next;
 };
+
