@@ -27,7 +27,7 @@ var better = function (nums) {
         if (nums[i] === nums[i-1]) count++;
         else nums[i-count] = nums[i]
     
-    return n - count
+    return nums.length - count
 }
 
 console.log(removeDuplicates([1, 1, 2, 3, 3, 3, 4]))
