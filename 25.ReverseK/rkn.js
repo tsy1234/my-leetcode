@@ -22,8 +22,12 @@ var reverseKGroup = function(head, k) {
     if (count === k) {
         curr = reverseKGroup(curr, k);
         while (count-- > 0) {
-
+            var tmp = head.next;
+            head.next = curr;
+            curr = head;
+            head = tmp;
         }
+        head = curr;
     }
 
     return head;
