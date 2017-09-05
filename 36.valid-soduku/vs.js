@@ -9,10 +9,11 @@ var isValidSudoku = function(board) {
     for (var i = 0;i < 9;i++) {
         for (var j = 0;j < 9;j++) {
             var c = board[i][j];
-            console.log(c);
             if (c !== '.') {
                 var num = parseInt(c, 10);
-                var k = parseInt(j / 3 + 1, 10) + parseInt((i / 3), 10) * 3;
+                var k = parseInt(j / 3 + 1, 10) + parseInt((i / 3), 10) * 3 - 1;
+                console.log(i, j)
+                console.log(parseInt(j / 3 + 1, 10), parseInt((i / 3), 10) * 3)
                 if (columns[i][num] || rows[j][num] || cube[k][num]) return false;
                 columns[i][num] = rows[j][num] = cube[k][num] = 1;
             }
@@ -29,4 +30,4 @@ var twoDimen = function (num) {
     return result;
 };
 
-console.log(isValidSudoku([".87654321","2........","3........","4........","5........","6........","7........","8........","9........"]));
+console.log(isValidSudoku(["..5.....6","....14...",".........",".....92..","5....2...",".......3.","...54....","3.....42.","...27.6.."]));
