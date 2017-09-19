@@ -7,17 +7,19 @@ class Solution {
 public:
     double myPow(double x, int n) {
         double ans = 1;
-        int p;
+        long long p = n;
         if (n < 0) {
-            p = -n;
+            p = -p;
+            cout << p << endl;
             x = 1 / x;
         } else {
             p = n;
         }
         while (p) {
-            if (abs(p) == 1) ans *= x;
+            if (p & 1) ans *= x;
             x *= x;
             p >>= 1;
+            // cout << p << endl;
         }
         return ans;
     }
@@ -25,6 +27,8 @@ public:
 
 int main () {
     Solution s;
-    cout << s.myPow(2, 2) << endl;
+    // cout << s.myPow(1.00000, -2147483648) << endl;
+    int end = 2147483648;
+    cout << end << endl;
     return 0;
 }
