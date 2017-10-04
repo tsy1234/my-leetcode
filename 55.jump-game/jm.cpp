@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstring>
+#include <algorithms>
 #include <vector>
 
 using namespace std;
@@ -30,6 +30,15 @@ public:
             result = sign[result];
         }
         return false;
+    }
+
+    bool better(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0;
+        for (int reach = 0;i < n && i <= reach;i++) {
+            reach = max(i + nums[i], reach);
+        }
+        return i == n; 
     }
 };
 
