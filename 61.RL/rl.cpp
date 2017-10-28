@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 struct ListNode {
     int val;
     ListNode *next;
@@ -19,6 +15,7 @@ public:
             num++;
         }
         k %= num;
+        if (k < 1) return NULL;
         int start = num - k - 1;
         ListNode* newTail = head;
         while (start > 0) {
@@ -31,6 +28,3 @@ public:
         return res;
     }
 };
-
-int main() {
-}
