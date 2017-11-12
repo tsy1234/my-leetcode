@@ -22,26 +22,20 @@ public:
 };
 
 int main() {
+    int v1[] = {1, 3, 5, 7};
+    int v2[] = {10, 11, 16, 20};
+    int v3[] = {23, 30, 34, 50};
     vector< vector<int> > vv(3);	
 	for(int i=0;i<3;i++) 
         vv[i].resize(4);
-
-    vv[0][0] = 1;
-    vv[0][1] = 3;
-    vv[0][2] = 5;
-    vv[0][3] = 7;
-    vv[1][0] = 10;
-    vv[1][1] = 11;
-    vv[1][2] = 16;
-    vv[1][3] = 20;
-    vv[2][0] = 23;
-    vv[2][1] = 30;
-    vv[2][2] = 34;
-    vv[2][3] = 50;
+    
+    vv[0].insert(vv[0].begin(), v1, v1 + 4);
+    vv[1].insert(vv[1].begin(), v2, v2 + 4);
+    vv[2].insert(vv[2].begin(), v3, v3 + 4);
     
     Solution s;
 
-    bool res = s.searchMatrix(vv, 12);
+    bool res = s.searchMatrix(vv, 11);
     cout << res << endl;
     return 0;
 }
