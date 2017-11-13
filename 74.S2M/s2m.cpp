@@ -25,6 +25,7 @@ int main() {
     int v1[] = {1, 3, 5, 7};
     int v2[] = {10, 11, 16, 20};
     int v3[] = {23, 30, 34, 50};
+    
     vector< vector<int> > vv(3);	
 	for(int i=0;i<3;i++) 
         vv[i].resize(4);
