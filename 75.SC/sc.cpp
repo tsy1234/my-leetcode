@@ -16,7 +16,7 @@ public:
 };
 
 int main() {
-    int a[] = {1, 2, 0};
+    int a[] = {1, 0, 2};
     vector<int> arr(a, a + 3);
     Solution s;
     s.sortColors(arr);
