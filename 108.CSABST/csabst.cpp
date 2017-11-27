@@ -7,7 +7,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
- class Solution {
+class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         TreeNode* head = sortedArrayToBST(nums, 0, nums.size() - 1);
