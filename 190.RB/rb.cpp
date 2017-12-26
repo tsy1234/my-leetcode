@@ -8,8 +8,4 @@ public:
         }
         return res;
     }
-
-    uint32_t reverseBitsTwo(uint32_t n) {
-        
-    }
 };
