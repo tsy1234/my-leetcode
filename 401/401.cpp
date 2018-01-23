@@ -60,19 +60,20 @@ public:
     
     void helper(vector<string>& res, pair<int, int> time, int num, int start_point) {
         if (num == 0) {
-            res.push_back(to_string(time.first) +  (time.second < 10 ?  ":0" : ":") + to_string(time.second));
+            res.push_back(to_string(time.first) + (time.second < 10 ? ":0" : ":") + to_string(time.second));
             return;
         }
-        for (int i = start_point; i < hour.size() + minute.size(); i++)
-            if (i < hour.size()) {    
+        for (int i = start_point;i < hour.size() + minute.size();i++) {
+            if (i < hour.size()) {
                 time.first += hour[i];
-                if (time.first < 12)     helper(res, time, num - 1, i + 1);     // "hour" should be less than 12.
+                if (time.first < 12)  helper(res, time, num - 1, i + 1);
                 time.first -= hour[i];
-            } else {     
+            } else {
                 time.second += minute[i - hour.size()];
-                if (time.second < 60)    helper(res, time, num - 1, i + 1);     // "minute" should be less than 60.
+                if (time.second < 60) helper(res, time, num - 1, i + 1);
                 time.second -= minute[i - hour.size()];
             }
+        }
     }
 }
 
