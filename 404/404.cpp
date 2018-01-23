@@ -7,6 +7,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+ 
+ // 不知道怎么把结果传回来 只好用类变量
 class Solution {
 private:
     int total;
