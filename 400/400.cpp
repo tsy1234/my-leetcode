@@ -17,6 +17,7 @@ public:
             num -= width[j];
             j++;
         }
+        // 这里卡了很久
         int integer;
         if (j == 1) {
             integer = width[j - 1] + num / j;
