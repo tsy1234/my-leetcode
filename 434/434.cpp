@@ -27,4 +27,11 @@ public:
         }
         return res;
     }
+
+    int three(string s) {
+        stringstream ss(s);
+        int res = 0;
+        while (ss >> s) res++;
+        return res;
+    }
 };
