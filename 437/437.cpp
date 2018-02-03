@@ -7,6 +7,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+ // 每个节点都需要作为起点进行一次计算
 class Solution {
 public:
     int pathSum(TreeNode* root, int sum) {
