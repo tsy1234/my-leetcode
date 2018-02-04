@@ -25,6 +25,7 @@ public:
         return res;
     }
 
+    // 滑动窗口算法，每次将后一个字符加入到窗口内，将窗口开头的字符从窗口排除
     vector<int> better(string s, string p) {
         int sLen = s.size(), pLen = p.size();
         vector<int> res;
