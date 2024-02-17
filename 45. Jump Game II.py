@@ -60,7 +60,7 @@ class Solution:
 
         return dp[-1]
     
-    # 空间还能优化 明天写
+    # 空间还能优化 明天写 其实就是贪心了 贪心是不是都可以从动态规划的思路去解释呢
     def dp_v4(self, nums: List[int]):
         pass
 
