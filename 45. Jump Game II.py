@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        return self.dp_v3(nums)
+        return self.dp_v4(nums)
     
     # 这总和贪心没关系吧 求最小 绝对是dp
     # dp定义:
@@ -61,7 +61,32 @@ class Solution:
         return dp[-1]
     
     # 空间还能优化 明天写 其实就是贪心了 贪心是不是都可以从动态规划的思路去解释呢
+    # 不再拘束在每个位置 而是按照第一次起跳 第二次起跳的最长来判断 太牛逼了 每次在可跳范围内选择使得下一步能够跳得最远的位置
+    # 这里一个end无法处理 因为每次都更新到后面 i永远<end step永远是1 end是用来判断是否需要再一次跳跃的
+    # 这个感觉有点难了
     def dp_v4(self, nums: List[int]):
+        if len(nums) <= 1: return 0
+        step = 1
+        # 这是第一次的最大范围 超过就得跳
+        end = nums[0]
+
+        # 这是下一次跳跃能达到的最大范围
+        max_r = 0
+
+        # 这个指针直接省去一次更新最大范围的循环 牛啊
+        for point in range(1, len(nums)):
+            if point > end:
+                step += 1
+                # 这里跳完了上一次的范围 就变成下一次的最大范围了 开始处理下一次跳跃
+                end = max_r
+            
+            max_r = max(max_r, point + nums[point])
+            if end >= len(nums) - 1:
+                break
+        return step
+    
+    # bfs有点像非递归的递归 好久没写过了 明天写下 算一道题
+    def bfs(self, nums: List[int]):
         pass
 
 ss = Solution()
