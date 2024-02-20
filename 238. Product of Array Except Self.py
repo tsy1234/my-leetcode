@@ -12,6 +12,7 @@ class Solution:
     """
     无敌的思路 双指针+前缀和+后缀和
     太难想了 这种方式相当于避免了两个数组的中间结果
+    想到了前缀和 但真没想到这种方式去算前后乘积
     """
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         preSum, afterSum = 1, 1
